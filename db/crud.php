@@ -31,7 +31,20 @@
         }
 
     }
-    }
+        public function getForms(){
+
+            $sql = "SELECT * FROM `form` a inner join specialities s on a.speciality_id = s.speciality_id";
+            $result = $this->db->query($sql);
+            return $result;
+        }
+
+        public function getSpecialities(){
+            $sql = "SELECT * FROM specialities";
+            $result = $this->db->query($sql);
+            return $result;
+
+        }
+}
 
 
 ?>

@@ -40,11 +40,13 @@ echo '<h1 class="display-5 text-center pt-xxl-2">Welcome '.$firstname.' </h1>';
     <li class="list-group-item">Date Of Birth: <?php echo $dob?></li>
     <li class="list-group-item">Contact: <?php echo $phone?></li>
   </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+
+    <!--<div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>-->
+
   </div>
-</div>
 
 
 
@@ -57,6 +59,8 @@ echo '<h1 class="display-5 text-center pt-xxl-2">Welcome '.$firstname.' </h1>';
 <br>
 <br>
 <br>
+
+
      <div id="footer">
      <?php echo "© ".date('Y')." Copyright All Rights Reserved" ;?>
      </div>
