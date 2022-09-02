@@ -9,8 +9,12 @@ $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
 try {
     $pdo = new PDO($dsn,$user,$password);
-    echo "hello data base";
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
 } catch(PDOException $e) {
-    echo "<h1>No database found</h1>";
-    //throw new PDOException($e-> getMessage());
+    // echo "<h1>No database found</h1>";
+    throw new PDOException($e-> getMessage());
 }
+require_once 'crud.php';
+$crud = new crud($pdo);

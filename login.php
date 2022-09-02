@@ -1,18 +1,31 @@
 <?php 
 $title = 'Login';
 require_once 'includes/header.php';
-?>
-<h1 class="text-center text-success">You have been Registered</h1>
-<?php
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$dob = $_POST['dob'];
-$speciality = $_POST['speciality'];
-$email = $_POST['email1'];
-$phone = $_POST['phone'];
+require_once 'db/conn.php';
+
+    if (isset($_POST['submit'])) {
+
+      //extract Values and declaire varriables
+
+      $firstname = $_POST['firstname'];
+      $lastname = $_POST['lastname'];
+      $dob = $_POST['dob'];
+      $speciality = $_POST['speciality'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'] ;
+
+      $isSuccess = $crud-> insert($firstname,$lastname,$dob,$speciality,$email,$phone);
+
+      if ($isSuccess) {        
+         echo '<h1 class="text-center text-success">You have been Registered</h1>';
+      }else {
+        echo '<h1 class="text-center text-danger">There was an error</h1>';
+      }
 
 
-echo '<h1 class="text-center">Welcome '.$firstname.' </h1>';
+    }
+
+echo '<h1 class="display-5 text-center pt-xxl-2">Welcome '.$firstname.' </h1>';
 ?>
 <!-- USER CARD-->
 

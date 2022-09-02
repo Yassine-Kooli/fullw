@@ -4,7 +4,6 @@ require_once 'includes/header.php';
 require_once 'db/conn.php';
 ?>
 <h1 class="text-center">Registration Form </h1>
-
 <form method="post" action="login.php">
 <div class="form-group">
       <label for="firstname">First Name</label>
@@ -21,14 +20,14 @@ require_once 'db/conn.php';
 <div class="form-group">
         <label for="speciality">Speciality</label>
            <select multiple class="form-control" id="speciality" name="speciality">
-            <option>Database Admin</option>
-            <option>Software Developer</option>
+            <option value="1">Database Admin</option>
+            <option value="2">Software Developer</option>
             <option>Web Developer</option>
             <option>Others...</option>
         </select>
 <div class="form-group">
-        <label for="email1">Email address</label>
-        <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email" name="email1">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 </div>
 
@@ -37,7 +36,7 @@ require_once 'db/conn.php';
         <input type="text"  id="phone" name="phone">
 </div>
 <br>
-  <button type="submit" name="submit" class="btn btn-outline-primary btn-lg col-12">Submit</button>
+<button type="submit" name="submit" class="btn btn-outline-primary btn-lg col-12">Submit</button>
 </form>
 <br>
 <?php require_once 'includes/footer.php'; ?>
