@@ -32,10 +32,17 @@
 
     }
         public function getForms(){
+            try { 
+                $sql = "SELECT * FROM `form` a inner join specialities s on a.speciality_id = s.speciality_id";
+                $result = $this->db->query($sql);
+                return $result;
+                
+            }catch(PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
 
-            $sql = "SELECT * FROM `form` a inner join specialities s on a.speciality_id = s.speciality_id";
-            $result = $this->db->query($sql);
-            return $result;
+          
         }
 
         public function editForm($id,$firstname,$lastname,$dob,$speciality,$email,$phone){
@@ -65,25 +72,49 @@
                 echo $e->getMessage();
                 return false;
             }
-            
         }
 
 
         public function getFormDetails($id){
-            $sql = "SELECT * FROM `form` a inner join specialities s on a.speciality_id = s.speciality_id WHERE userid = :id";
-            $stmt = $this->db->prepare($sql);
-            $stmt->bindparam(':id',$id);
-            $stmt->execute();
-            $result = $stmt = $stmt->fetch();
-            return $result;
-}
+            try {
+                $sql = "SELECT * FROM `form` a inner join specialities s on a.speciality_id = s.speciality_id WHERE userid = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id',$id);
+                $stmt->execute();
+                $result = $stmt = $stmt->fetch();
+                return $result;
+            }catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        } 
+        
+        public function deleteForm($id){
+            try {
+                $sql = "DELETE FROM `form` WHERE userid = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id',$id);
+                $stmt->execute();
+                return true;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
 
+            }
+            
+
+        }
 
         public function getSpecialities(){
-            $sql = "SELECT * FROM specialities";
-            $result = $this->db->query($sql);
-            return $result;
+            try {
+                $sql = "SELECT * FROM specialities";
+                $result = $this->db->query($sql);
+                return $result;
 
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
         }
 
         

@@ -18,11 +18,12 @@ $phone = $_POST['phone'] ;
             header("location: viewrecords.php");
     }
     else{
-        echo "error";
+        //echo "error";
+        include "includes/errorMessage.php";
     }
 
 }else {
-    "error";
+    include "includes/errorMessage.php";
 }
 
 ?>
