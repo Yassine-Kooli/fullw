@@ -29,21 +29,34 @@
                                 <option value="<?php echo $r['speciality_id']?>"><?php echo $r['name']?></option>
                                 <?php }?>
                         </select>
-<div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-</div>
-<div class="form-group">
-        <label for="phone">Contact Number</label>
-        <input required type="text"  id="phone" name="phone">
-</div>
-<br>
-<button type="submit" name="submit" class="btn btn-outline-primary btn-lg col-12">Submit</button>
-</form>
+
+                        <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="custom-file">
+                                <input type="file" accept="image/*"  class="custom-file-input" id="avatar" name="avatar">
+                                <label class="custom-file-label">Chose your picture</label>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                                <label for="phone">Contact Number</label>
+                                <input required type="text"  id="phone" name="phone">
+                        </div>
+                        <br>
+                        <button type="submit" name="submit" class="btn btn-outline-primary btn-lg col-12">Submit</button>
+                </form>
 
 
  
 
 
-   
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php require_once 'includes/footer.php'; ?>

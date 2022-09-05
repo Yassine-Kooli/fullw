@@ -1,39 +1,59 @@
+<?php 
+//This includes the session file. This file contains code that starts/resumes a session. 
+//By having it in the header file, it will be included on every page, allowing session capability to be used on every page across the website.
+include_once 'includes/session.php'?>
+
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href=https://bootswatch.com/5/darkly/bootstrap.min.css>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-        <!-- <link rel="stylesheet" href="bootstrap/bootstrap.min1.css"> -->
-        <title>Attendace - <?php echo $title ?> </title>
-   </head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" href="css/site.css" />
+    
+    <title>Attendance - <?php echo $title ?></title>
+    <style>
+      html {
+        background: #000000;
+        margin: 0;
+        color: white;
+      }
+    </style>
+
+
+  </head>
   <body>
-  <div class="container">
-    <!--Navigation bar-->
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  
-      <a class="navbar-brand" href="index.php">IT Conference</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-        </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item active">
-                  <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                  <a class="nav-link" href="viewrecords.php">View Records</a>
-                    </li>
-                    <li class="nav-item">
-                  <a class="nav-link" href="aboutus.php">About Us</a>
-                    </li>
-                    </ul>
+    <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+      <div>
+      <a class="d-flex align-items-center" href="index.php"><img src="https://www.freelogodesign.org/assets/img/home/icones/logos-created.svg" width="90" height="71" alt="Directory logo"></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="viewrecords.php">View Attendees</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <?php 
+          if(!isset($_SESSION['userid'])){
+            ?>
+            <a class="nav-item nav-link" href="userlogin.php">Login <span class="sr-only">(current)</span></a>
+            <?php } else { ?>
+              <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+              <?php } ?>
             </div>
-</nav>
-<br>
+          </div>
+    </nav>
+        <div class="container">
+          <br>
+          <br>
+          <br>
+          <br>
