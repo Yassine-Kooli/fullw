@@ -1,9 +1,19 @@
 <?php
+/*
+        //develepment code connection
 $host = 'localhost';
 $db = 'form_db';
 $user = 'root';
 $password ='root';
 $charset = 'utf8mb4';
+*/
+// romote connection
+    $host = 'remotemysql.com';
+    $db = 'XjNabWUcV6';
+    $user = 'XjNabWUcV6';
+    $password ='BdG29S28oM';
+    $charset = 'utf8mb4';
+
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
