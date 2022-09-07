@@ -88,7 +88,19 @@
                 return false;
             }
         } 
-        
+
+       /* public function getAllUsers(){
+            try {
+                $sql = "SELECT * FROM form";
+                $result = $this->db->query($sql);
+                return $result;
+
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
+*/
         public function deleteForm($id){
             try {
                 $sql = "DELETE FROM `form` WHERE userid = :id";
@@ -116,6 +128,10 @@
                 return false;
             }
         }
+        
+
+        
+
 
         
 }

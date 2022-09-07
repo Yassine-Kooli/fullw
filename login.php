@@ -27,7 +27,10 @@ $title = 'Login';
 <!-- USER CARD-->
 <div class="card" style="width: 18rem;">
 <div class="card-body">
-  <h5 class="card-title"><?php echo $firstname." ".$lastname?></h5>
+  <div class="d-flex justify-content-center">
+    <img src="uploads/user-icon.png" height= "100" alt="User-icon" class="d-flex justify-content-center">
+  </div>
+  <h5 class="card-title">- <?php echo $firstname." ".$lastname?></h5>
   <p class="card-text"><?php echo $speciality?></p>
 </div>
 <ul class="list-group list-group-flush">

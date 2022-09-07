@@ -20,26 +20,29 @@ include_once 'includes/session.php'?>
     
     <title>Attendance - <?php echo $title ?></title>
 
-
+  
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div>
-      <a class="d-flex align-items-center" href="index.php"><img src="https://www.freelogodesign.org/assets/img/home/icones/logos-created.svg" width="90" height="71" alt="Directory logo"></a>
+      <a class="d-flex align-items-center" href="home.php"><img src="https://www.freelogodesign.org/assets/img/home/icones/logos-created.svg" width="90" height="71" alt="Directory logo"></a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
-          <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="home.php">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="viewrecords.php">View Attendees</a>
         </div>
         <div class="navbar-nav ml-auto">
           <?php 
           if(!isset($_SESSION['userid'])){
             ?>
+            <a class="nav-item nav-link btn btn-default" href="index.php">Signup now !<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link btn btn-success" href="userlogin.php">Login<span class="sr-only">(current)</span></a>
+            
+
             <?php } else { ?>
               <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>

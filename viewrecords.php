@@ -6,7 +6,6 @@
 //result from get specialities funcion in CRUD class
     $results = $crud->getForms();  
 ?>
-
 <table class ="table table-hover">
         <tr>
             <th>#ID</th>
@@ -23,7 +22,7 @@
                 <td><?php echo $r['lastname']?></td>
                 <td><?php echo $r['name']?></td>
                     <td>
-                        <a href="view.php?id=<?php echo $r['userid'] ?>" class="btn btn-primary">View</a>
+                        <a href="view.php?id=<?php echo $r['userid'] ?>" class="btn btn-info">View</a>
                         <a href="edit.php?id=<?php echo $r['userid'] ?>" class="btn btn-warning">Edit</a>
                         <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['userid'] ?>" class="btn btn-danger">Delete</a>
                     
@@ -33,8 +32,8 @@
     <?php }?>  
 </table>
 <div class="mx-auto">
-<a href="#" class="btn btn-success">View All Records</a>
-<a onclick="return confirm('Are you sure you want to delete this record?');" href="#" class="btn btn-danger">Delete All</a>                     
+<a href="viewAllRecords.php" class="btn btn-success">View All Records</a>
+<a onclick="return confirm('Are you sure you want to delete all your records?');" href="#" class="btn btn-danger">Delete All</a>                     
 </div>
 
 <br>
