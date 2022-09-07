@@ -1,10 +1,3 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <div id="footer" class="b-main-footer b-main-footer--home">
    <?php echo "© ".date('Y')." Copyright All Rights Reserved" ;?>
 </div>
