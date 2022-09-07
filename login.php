@@ -10,7 +10,8 @@ $title = 'Login';
       $dob = $_POST['dob'];
       $speciality = $_POST['speciality'];
       $email = $_POST['email'];
-      $phone = $_POST['phone'] ;
+      $phone = $_POST['phone'];
+    
       $isSuccess = $crud-> insert($firstname,$lastname,$dob,$speciality,$email,$phone);
       if ($isSuccess) {
         //echo '<h1 class="text-center text-success">You have been Registered</h1>';

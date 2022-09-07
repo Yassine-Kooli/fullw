@@ -7,8 +7,7 @@
     $results = $crud->getForms();  
 ?>
 
-
-<table class ="table">
+<table class ="table table-hover">
         <tr>
             <th>#ID</th>
             <th>First Name</th>
@@ -27,30 +26,17 @@
                         <a href="view.php?id=<?php echo $r['userid'] ?>" class="btn btn-primary">View</a>
                         <a href="edit.php?id=<?php echo $r['userid'] ?>" class="btn btn-warning">Edit</a>
                         <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['userid'] ?>" class="btn btn-danger">Delete</a>
-                        
-
+                    
                     </td>
-
             </tr>
             
     <?php }?>  
 </table>
+<div class="mx-auto">
+<a href="#" class="btn btn-success">View All Records</a>
+<a onclick="return confirm('Are you sure you want to delete this record?');" href="#" class="btn btn-danger">Delete All</a>                     
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
 <br>
 <br>
 <?php require_once 'includes/footer.php'; ?>

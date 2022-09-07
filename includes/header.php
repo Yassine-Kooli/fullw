@@ -15,20 +15,15 @@ include_once 'includes/session.php'?>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="css/style.css">
     
     <title>Attendance - <?php echo $title ?></title>
-    <style>
-      html {
-        background: #000000;
-        margin: 0;
-        color: white;
-      }
-    </style>
 
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div>
       <a class="d-flex align-items-center" href="index.php"><img src="https://www.freelogodesign.org/assets/img/home/icones/logos-created.svg" width="90" height="71" alt="Directory logo"></a>
       </div>
@@ -44,7 +39,7 @@ include_once 'includes/session.php'?>
           <?php 
           if(!isset($_SESSION['userid'])){
             ?>
-            <a class="nav-item nav-link" href="userlogin.php">Login <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link btn btn-success" href="userlogin.php">Login<span class="sr-only">(current)</span></a>
             <?php } else { ?>
               <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
